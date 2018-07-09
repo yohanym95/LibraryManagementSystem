@@ -48,8 +48,9 @@ public class ProgressBar extends javax.swing.JFrame implements Runnable{
                    i=201;
                    setVisible(false);
                    Home ob = new Home();
-                   ob.setVisible(true);
+                ob.setVisible(true);
                }
+               Thread.sleep(100);
                
            } 
         }catch(Exception e){
