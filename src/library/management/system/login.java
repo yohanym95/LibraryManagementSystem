@@ -168,6 +168,7 @@ String query1 ="select userName, Password from createaccount";
                    ProgressBar ob = new ProgressBar();
                    ob.setUpLoading();
                    ob.setVisible(true);
+                   this.dispose();
                    
             }else{
                     JOptionPane.showMessageDialog(null, "invalid details!!", "wrong", ERROR);

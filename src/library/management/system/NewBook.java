@@ -5,19 +5,39 @@
  */
 package library.management.system;
 
+import com.mysql.jdbc.PreparedStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author yohan
  */
 public class NewBook extends javax.swing.JFrame {
-
+    Connection con= null;
+    PreparedStatement pst = null;
+    ResultSet rs;
+    
+    
     /**
      * Creates new form NewBook
      */
     public NewBook() {
+        super("New Books");
         initComponents();
+        con=LibraryManagementSystem.conn();
+        Random();
     }
-
+    
+    public void Random(){
+        Random r = new Random();
+        jTextField1.setText(""+r.nextInt(1000+1));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -156,7 +176,20 @@ public class NewBook extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+      String Id = jTextField1.getText();
+      String name = jTextField2.getText();
+      int edition = jComboBox1.getSelectedIndex();
+      String publiser = jTextField4.getText();
+      String price = jTextField5.getText();
+      String pages = jTextField6.getText();
+      String sql = "insert into newbook(Id,Name,Edition,Publisher,price,pages)VALUES('"+Id+"','"+name+"','"+edition+"','"+publiser+"','"+price+"','"+pages+"')";
+        try {
+            pst = (PreparedStatement) con.prepareStatement(sql);
+            pst.execute();
+           JOptionPane.showMessageDialog(null, "new Book Added");
+        } catch (Exception ex) {
+           // JOptionPane.showMessageDialog(null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
