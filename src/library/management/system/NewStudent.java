@@ -8,6 +8,11 @@ package library.management.system;
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import java.util.Random;
 
 /**
  *
@@ -27,7 +32,8 @@ public class NewStudent extends javax.swing.JFrame {
         Random();
     }
     public void Random(){
-      //  Random r = new Random();
+       Random r = new Random();
+       jTextField1.setText(""+r.nextInt(1000+1));
         
     }
     
@@ -189,13 +195,23 @@ public class NewStudent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String Id = jTextField1.getText();
+       int Id = Integer.valueOf(jTextField1.getText());
        String name = jTextField2.getText();
        String Faculty =jComboBox1.getSelectedItem().toString();
        String Course = jTextField3.getText();
        String Year = jComboBox2.getSelectedItem().toString();
        String sem = jComboBox3.getSelectedItem().toString();
        
+       String  Query = "Insert into newstudent(Id,Name,Faculty,Course,year,semeseter)VALUES('"+Id+"','"+name+"','"+Faculty+"','"+Course+"','"+Year+"','"+sem+"')";
+        try {
+            pst = (PreparedStatement) con.prepareStatement(Query);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "New Student Added");
+        } catch (Exception ex) {
+            System.out.println("wrong :"+ ex);
+           
+        }
+      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
