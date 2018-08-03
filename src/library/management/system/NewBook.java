@@ -71,10 +71,8 @@ public class NewBook extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0))), "New Book", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
 
-        jComboBox1.setBackground(null);
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
-        jButton1.setBackground(null);
         jButton1.setText("Add");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,34 +80,20 @@ public class NewBook extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setBackground(null);
         jLabel1.setText("Book ID");
 
-        jTextField6.setBackground(null);
-
-        jLabel3.setBackground(null);
         jLabel3.setText("Edition");
 
-        jTextField1.setBackground(null);
-
-        jLabel4.setBackground(null);
         jLabel4.setText("Publisher");
 
-        jTextField4.setBackground(null);
-
-        jLabel6.setBackground(null);
         jLabel6.setText("Pages");
 
-        jTextField5.setBackground(null);
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
             }
         });
 
-        jTextField2.setBackground(null);
-
-        jButton2.setBackground(null);
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,11 +101,9 @@ public class NewBook extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setBackground(null);
         jLabel5.setText("Price");
 
-        jLabel2.setBackground(null);
-        jLabel2.setText("Name");
+        jLabel2.setText("Book Name");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -141,7 +123,7 @@ public class NewBook extends javax.swing.JFrame {
                             .addComponent(jTextField2)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 392, Short.MAX_VALUE))))
+                                .addGap(0, 371, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
