@@ -288,7 +288,7 @@ public class IssueBook extends javax.swing.JFrame {
 
         jLabel13.setText("Date of Issue");
 
-        jButton3.setText("Issue");
+        jButton3.setText("Issued");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
